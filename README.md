@@ -39,7 +39,7 @@ Follow these steps to set up and run the ChatBot POC on your local machine:
     pip install -r requirements.txt
 
 4. **Add AzureOpenAI Authentication details**
-    In `ai_agent_response.py` replace the placeholder with your API key and endpoint to authenticate before using the app
+    in `ai_agent_response.py` replace the placeholder with your API key and endpoint to authenticate before using the app
 
 5. **Initialize Databases**
     Create sqlite databases as:
@@ -47,7 +47,7 @@ Follow these steps to set up and run the ChatBot POC on your local machine:
     sqlite3 memory.db(to create database to store memory logs)
 
 6. **Run the application**
-    flask run
+    `flask run`
     Once running you can access the app at your localhost endpoint in your browser.
 
 ## How to Use It
