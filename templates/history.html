@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat History</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="py-2">
+      <div class="container text-center">
+        <h1 class="h5 mb-0">Chat History</h1>
+        <a href="/" class="btn btn-link">Back to Chat</a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container d-flex flex-column main-content">
+      <!-- History Container -->
+      <div id="history-container">
+        {% if interactions %}
+          {% for interaction in interactions %}
+            <div class="message user">
+              <small>{{ interaction[2] }}</small><br>
+              {{ interaction[0] }}
+            </div>
+            <div class="message agent">
+              <small>{{ interaction[2] }}</small><br>
+              {{ interaction[1] }}
+            </div>
+          {% endfor %}
+        {% else %}
+          <p>No history available.</p>
+        {% endif %}
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-2">
+      <div class="container text-center">
+        <small>© ChatBot Application</small>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+Flask 
+langchain
+langchain-openai
+pandas
+requests
